@@ -16,10 +16,9 @@
 #include<math.h>
 
 int main(){
-    double radius, volume, volume2;
+    double radius, volume;
     scanf("%lf", &radius);
-    volume = (4.0/3.0)* M_PI *(pow(radius, 3));
-    volume2 = (4.0/3.0)* 3.14 *(pow(radius, 3));
-    printf("Volume using M_PI: %.2lf\nVolume using 3.14 as Pi: %.2lf", volume, volume2);
+    volume = (4.0/3.0)* 3.14 *(pow(radius, 3));
+    printf("Volume using 3.14 as Pi: %.2lf", volume);
     return 0;
 }
