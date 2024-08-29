@@ -1,0 +1,44 @@
+In C, the primary storage classes are auto, extern, register, and static. These storage classes control the lifetime, visibility, and initial value of variables. However, there are additional storage class specifiers that can be used in combination with these to further control variable attributes. Here’s a summary of the storage classes and some additional specifiers:
+
+1. auto
+
+	•	Description: Default storage class for local variables.
+	•	Initialization: Not automatically initialized; contains garbage value if not explicitly initialized.
+	•	Scope: Local to the function or block where it is declared.
+	•	Lifetime: Duration of the block or function execution.
+
+2. extern
+
+	•	Description: Indicates that a variable is defined in another file or elsewhere in the same file.
+	•	Initialization: No initialization; only a declaration.
+	•	Scope: Global visibility (throughout the program, given a proper definition).
+	•	Lifetime: Duration of the program.
+
+3. register
+
+	•	Description: Suggests that a variable should be stored in a CPU register for faster access.
+	•	Initialization: Not automatically initialized; contains garbage value if not explicitly initialized.
+	•	Scope: Local to the function or block where it is declared.
+	•	Lifetime: Duration of the block or function execution.
+	•	Note: The register keyword is only a suggestion; the compiler may ignore it.
+
+4. static
+
+	•	Description: Ensures that a variable retains its value between function calls or restricts visibility to the file.
+	•	Initialization: Automatically initialized to 0 if not explicitly initialized.
+	•	Scope: Local to the function or file where it is declared, but retains its value.
+	•	Lifetime: Duration of the program.
+
+Additional Specifiers
+
+These are not storage classes but are used in conjunction with the storage classes:
+
+	1.	const
+	•	Description: Specifies that the value of the variable cannot be modified after initialization.
+	•	Scope and Lifetime: Dependent on the storage class used (e.g., static const).
+	2.	volatile
+	•	Description: Indicates that the value of the variable may change at any time, usually due to external factors. Used to prevent optimization on variables that can be modified outside the normal flow of the program.
+	•	Scope and Lifetime: Dependent on the storage class used (e.g., volatile int).
+	3.	extern "C"
+	•	Description: Used in C++ to specify that the linkage of the function or variable is C-style, which disables name mangling.
+	•	Scope and Lifetime: Dependent on the storage class used.
